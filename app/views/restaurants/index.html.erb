@@ -1,0 +1,13 @@
+<h1>Restaurants</h1>
+
+<section class="messages">
+  <% flash.each do |key, value| %>
+  <p class="key"><%= value %></p>
+  <% end %>
+</section>
+
+<ul>
+<% @restaurants.each do |r| %>
+  <li><%= r.name %></li>
+<% end %>
+</ul>
