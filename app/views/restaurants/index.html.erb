@@ -1,13 +1,13 @@
 <h1>Restaurants</h1>
 
-<section class="messages">
-  <% flash.each do |key, value| %>
-  <p class="key"><%= value %></p>
+<% if @restaurants.length > 0%>
+  <ul class="list-group">
+  <% @restaurants.each do |r| %>
+    <li class="list-group-item"><%= link_to r.name, restaurant_path(r) %></li>
   <% end %>
-</section>
-
-<ul>
-<% @restaurants.each do |r| %>
-  <li><%= r.name %></li>
+  </ul>
+<% else %>
+  <div class="well">
+    <h3>Nothing to look at. Why don't you <%= link_to 'add a review', new_restaurant_path %>?</h3>
+  </div>
 <% end %>
-</ul>

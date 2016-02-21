@@ -8,7 +8,28 @@
 </head>
 <body>
 
-<%= yield %>
+    <nav class="navbar navbar-inverse">
+    <header class="container-fluid page-width">
+      <ul class="nav navbar-nav">
+        <li role="presentation" class=<%= controller?('restaurants') && action?('index') ? 'active' : '' %> >
+          <%= link_to 'Home', root_path %>
+        </li>
+        <li role="presentation" class=<%= controller?('restaurants') && action?('new') ? 'active' : '' %> >
+          <%= link_to 'Add a restaurant', new_restaurant_path %>
+        </li>
+      </ul>
+  </header>
+    </nav>
+
+<section id="messages" class="container-fluid page-width">
+  <% flash.each do |key, value| %>
+  <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
+</section>
+
+  <main class="container-fluid page-width">
+    <%= yield %>
+  </main>
 
 </body>
 </html>
