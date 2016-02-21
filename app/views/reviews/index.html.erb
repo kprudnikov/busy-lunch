@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rate</th>
+      <th>Comment</th>
+      <th>Price</th>
+      <th>Serve time</th>
+      <th>Restaurant</th>
+      <th>Meals number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.rate %></td>
+        <td><%= review.comment %></td>
+        <td><%= review.price %></td>
+        <td><%= review.serve_time %></td>
+        <td><%= review.restaurant %></td>
+        <td><%= review.meals_number %></td>
+        <td><%= link_to 'Show', review %></td>
+        <td><%= link_to 'Edit', edit_review_path(review) %></td>
+        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Review', new_restaurant_review_path %>

@@ -1,6 +1,9 @@
-<h1>New restaurant name</h1>
+<h1 class="h3">И как же называется это чудное место?</h1>
 
 <%= form_for(@restaurant) do |f| %>
-  <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.text_field :name %><br>
+  </div>
+  <%= f.submit 'Давайте уже есть!', {class: 'btn btn-primary'}%>
 
 <% end %>

@@ -1,13 +1,13 @@
-<h1>Restaurants</h1>
+<h1>Рестораны</h1>
 
 <% if @restaurants.length > 0%>
   <ul class="list-group">
   <% @restaurants.each do |r| %>
-    <li class="list-group-item"><%= link_to r.name, restaurant_path(r) %></li>
+    <li class="list-group-item"><%= link_to r.name, restaurant_reviews_path(r) %></li>
   <% end %>
   </ul>
 <% else %>
-  <div class="well">
-    <h3>Nothing to look at. Why don't you <%= link_to 'add a review', new_restaurant_path %>?</h3>
+  <div class="well well-sm">
+    <h3>У нас первый посетитель! Желаете <%= link_to 'отобедать', new_restaurant_path %>?</h3>
   </div>
 <% end %>
