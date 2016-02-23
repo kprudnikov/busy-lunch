@@ -14,14 +14,14 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
-    if @restaurant.save
-      flash[:success] = 'Отличненько, ресторан добавлен.'
-      redirect_to new_restaurant_review_path(@restaurant)
-    else
-      flash[:danger] = 'Ну вы же не на улице едите, в самом деле? У заведения наверняка есть название.'
-      redirect_to new_restaurant_path
-    end
 
+    # if @restaurant.save
+    #   flash[:success] = 'Отличненько, ресторан добавлен.'
+    #   redirect_to new_restaurant_review_path(@restaurant)
+    # else
+    #   flash[:danger] = 'Ну вы же не на улице едите, в самом деле? У заведения наверняка есть название.'
+    #   redirect_to new_restaurant_path
+    # end
   end
 
   def update
