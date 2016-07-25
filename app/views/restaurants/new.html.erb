@@ -1,9 +1,16 @@
 <h1 class="h3">И как же называется это чудное место?</h1>
 
 <%= form_for(@restaurant) do |f| %>
-  <div class="form-group">
-    <%= f.text_field :name %><br>
+  <div class="col-sm-6 col-xs-12">
+    <div class="row">
+      <div class="input-group">
+          <%= f.text_field :name, {class: 'form-control'} %>
+          <span class="input-group-btn">
+            <%= f.submit 'Давайте уже есть!', {class: 'btn btn-primary'}%>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
-  <%= f.submit 'Давайте уже есть!', {class: 'btn btn-primary'}%>
 
 <% end %>

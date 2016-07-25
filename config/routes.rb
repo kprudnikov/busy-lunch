@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  get '/find' => 'restaurant_aliases#find'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
