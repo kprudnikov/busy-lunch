@@ -1,5 +1,4 @@
 class RestaurantsController < ApplicationController
-
   def index
     @restaurants = Restaurant.all
   end
@@ -14,7 +13,11 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.create(restaurant_params)
+    @restaurant = Restaurant.find_or_create_by(restaurant_params)
+
+    render json: @restaurant
+
+#     respond_with @restaurant, json: @restaurant
 
     # if @restaurant.save
     #   flash[:success] = 'Отличненько, ресторан добавлен.'

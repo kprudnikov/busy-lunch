@@ -19,12 +19,15 @@ $page-width: 960px;
   max-width: $page-width;
 }
 
-// .menu {
-//   list-style: none;
-//   padding: 0;
-
-//   & > li {
-//     display: inline-block;
-//     float: left;
-//   }
-// }
+.input-group-btn {
+	& > {
+		.fa-circle-o-notch {
+			position: absolute;
+			font-size: 16px;
+			left: -24px;
+			top: 50%;
+			margin-top: -8px;
+			z-index: 2;
+		}
+	}
+}
