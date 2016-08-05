@@ -1,5 +1,5 @@
 class RestaurantAlias < ActiveRecord::Base
-  belongs_to :restaurant
+  belongs_to :restaurant, dependent: :destroy
 
   def find_or_create_restaurant(name)
     restaurant_alias = self.find(name: name)

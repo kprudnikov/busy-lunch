@@ -10,6 +10,7 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+    puts "new rest page"
   end
 
   def create
